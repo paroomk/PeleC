@@ -25,11 +25,11 @@ parse_params(ProbParmDevice* prob_parm_device)
 extern "C" {
 void
 amrex_probinit(
-  const int* init,
-  const int* name,
-  const int* namelen,
-  const amrex_real* problo,
-  const amrex_real* probhi)
+  const int* /*init*/,
+  const int* /*name*/,
+  const int* /*namelen*/,
+  const amrex_real* /*problo*/,
+  const amrex_real* /*probhi*/)
 {
   parse_params(PeleC::h_prob_parm_device);
 }

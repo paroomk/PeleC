@@ -32,7 +32,7 @@ pc_initdata(
   int j,
   int k,
   amrex::Array4<amrex::Real> const& state,
-  amrex::GeometryData const& geomdata,
+  amrex::GeometryData const& /*geomdata*/,
   ProbParmDevice const& prob_parm)
 {
 
@@ -67,7 +67,7 @@ bcnormal(
   amrex::Real s_ext[NVAR],
   const int idir,
   const int sgn,
-  const amrex::Real time,
+  const amrex::Real /*time*/,
   amrex::GeometryData const& geomdata,
   ProbParmDevice const& prob_parm)
 {
