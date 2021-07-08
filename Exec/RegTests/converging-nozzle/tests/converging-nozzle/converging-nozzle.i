@@ -12,6 +12,7 @@ geometry.coord_sys   = 0  # 0 => cart, 1 => RZ  2=>spherical
 geometry.prob_lo     =  0.0 -4.7025 -4.7025
 geometry.prob_hi     =  14.1075 4.7025 4.7025
 amr.n_cell           =  144 96 96
+amr.n_cell           =  72 48 48
 
 # >>>>>>>>>>>>>  BC KEYWORDS <<<<<<<<<<<<<<<<<<<<<<
 # Interior, UserBC, Symmetry, SlipWall, NoSlipWall
