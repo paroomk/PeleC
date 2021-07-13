@@ -58,8 +58,8 @@ EBConvergingNozzle(const amrex::Geometry& geom, const int max_level)
   ProbParmDevice const* pp = PeleC::h_prob_parm_device;
 
   amrex::EB2::CylinderIF main(
-    0.5 * pp->d_cyl, 2.0 * pp->l_combustor, 0, {0.5 * pp->l_combustor, 0, 0},
-    true);
+    0.5 * pp->d_cyl, 2.0 * pp->l_combustor, 0,
+    {AMREX_D_DECL(0.5 * pp->l_combustor, 0, 0)}, true);
 
   auto comb = main;
 
@@ -68,13 +68,15 @@ EBConvergingNozzle(const amrex::Geometry& geom, const int max_level)
   amrex::Real norm = -1.0 / slope_nozzle;
   amrex::Real nmag = std::sqrt(1 + 1 / (norm * norm));
   amrex::EB2::PlaneIF nozzle_plane(
-    {0, 0, 0}, {1 / nmag, slope_nozzle / nmag, 0.0}, true);
+    {AMREX_D_DECL(0, 0, 0)}, {AMREX_D_DECL(1 / nmag, slope_nozzle / nmag, 0.0)},
+    true);
   auto nozzle = amrex::EB2::translate(
     amrex::EB2::rotate(amrex::EB2::lathe(nozzle_plane), 90 * M_PI / 180, 1),
-    {pp->l_combustor + 0.5 * pp->d_nozzle / slope_nozzle, 0, 0});
+    {AMREX_D_DECL(pp->l_combustor + 0.5 * pp->d_nozzle / slope_nozzle, 0, 0)});
 
   amrex::EB2::CylinderIF exit(
-    0.5 * pp->d_nozzle, 4 * pp->l_exit, 0, {pp->l_combustor, 0, 0}, true);
+    0.5 * pp->d_nozzle, 4 * pp->l_exit, 0,
+    {AMREX_D_DECL(pp->l_combustor, 0, 0)}, true);
   auto nozzle_exit = amrex::EB2::makeIntersection(nozzle, exit);
 
   auto polys = amrex::EB2::makeUnion(comb, nozzle_exit);
