@@ -81,7 +81,7 @@ tagging.max_denerr_lev = 3
 tagging.max_dengrad_lev = 3
 tagging.max_vfracerr_lev = 1
 
-eb2.geom_type = "sco2-combustor"
+eb2.geom_type = "converging-nozzle"
 eb2.small_volfrac=1.e-6
 ebd.boundary_grad_stencil_type = 0
 pelec.eb_boundary_T = 300.

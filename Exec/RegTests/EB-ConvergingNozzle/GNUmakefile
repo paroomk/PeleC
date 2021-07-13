@@ -37,4 +37,4 @@ Blocs := .
 PELEC_HOME := ../../..
 include $(PELEC_HOME)/Exec/Make.PeleC
 
-DEFINES += -DsCO2Combustor
+DEFINES += -DConvergingNozzle

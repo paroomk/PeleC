@@ -51,7 +51,7 @@ PeleC::problem_post_restart()
 }
 
 void
-EBsCO2Combustor(const amrex::Geometry& geom, const int max_level)
+EBConvergingNozzle(const amrex::Geometry& geom, const int max_level)
 {
   int max_coarsening_level = max_level; // Because there are no mg solvers here
   parse_params(PeleC::h_prob_parm_device);

@@ -22,7 +22,7 @@
 
 void parse_params(std::unique_ptr<ProbParmDevice>& prob_parm_device);
 
-void EBsCO2Combustor(const amrex::Geometry& geom, const int max_level);
+void EBConvergingNozzle(const amrex::Geometry& geom, const int max_level);
 
 AMREX_GPU_DEVICE
 AMREX_FORCE_INLINE
