@@ -139,6 +139,11 @@ CEXE_sources += AMReX_buildInfo.cpp
 CEXE_headers += $(AMREX_HOME)/Tools/C_scripts/AMReX_buildInfo.H
 INCLUDE_LOCATIONS += $(AMREX_HOME)/Tools/C_scripts
 
+INCLUDE_LOCATIONS += /home/pmadathi/tf_c/include
+
+LIBRARY_LOCATIONS   = /home/pmadathi/tf_c/lib
+LIBRARIES = -ltensorflow
+
 ifdef Chemistry_Model
   MNAMES += CHEMISTRY=$(Chemistry_Model)
 endif
